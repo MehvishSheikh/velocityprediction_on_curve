@@ -1,24 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
+import './Video.css'; // Import CSS file for styling
+import driveVideo from './Output_Video1.mp4'; // Import video file
 
 function MaskedVideo() {
-  const [frames, setFrames] = useState([]);
+  const videoRef = useRef(null);
 
-  useEffect(() => {
-    // Fetch processed frames from the backend when the component mounts
-    fetch('/processed_frames')
-      .then(response => response.json())
-      .then(data => setFrames(data))
-      .catch(error => console.error('Error fetching processed frames:', error));
-  }, []);
+  const togglePlay = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+  };
 
   return (
-    <div>
-      <h1>Processed Video</h1>
-      <div className="video-container">
-        {frames.map((frame, index) => (
-          <img key={index} src={`data:image/jpeg;base64,${frame}`} alt={`Frame ${index}`} />
-        ))}
-      </div>
+    <div className="video-container">
+      <h1>Masked Video</h1>
+      <video
+        ref={videoRef}
+        className="video-player"
+        controls
+        onClick={togglePlay}
+      >
+        <source src={driveVideo} type="video/mp4" />
+        {/* Add additional <source> elements for different video formats if needed */}
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }

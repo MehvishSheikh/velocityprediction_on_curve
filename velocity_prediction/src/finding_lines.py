@@ -37,8 +37,10 @@ def calculate_max_velocity(curvature, friction_coefficient=0.7):
     # Acceleration due to gravity (m/s^2)
     g = 9.81
 
+    curvature = abs(curvature)
+
     # Calculate maximum safe velocity based on curvature
-    max_velocity = math.sqrt(mu * g * curvature)
+    max_velocity = math.sqrt(abs(mu * g * curvature))
     
     return max_velocity
 
@@ -405,7 +407,12 @@ def print_road_status(img, left_line, right_line):
     cv2.putText(img, lane_inf, (10, 63), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 100, 100), 1)
     cv2.putText(img, lane_curve, (10, 83), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 100, 100), 1)
     cv2.putText(img, deviate, (10, 103), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 100, 100), 1)
-    cv2.putText(img, maxvelocity, (10, 123), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 100, 100), 1)
+    cv2.putText(img, maxvelocity, (10, 133), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 139), 2, cv2.LINE_AA)
+
+
+
+
+    # cv2.putText(img, maxvelocity, (10, 123), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 100, 100), 1)
 
     return img
 

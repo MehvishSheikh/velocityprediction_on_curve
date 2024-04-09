@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import './Video.css'; // Import CSS file for styling
-import driveVideo from './drive.mp4'; // Import video file
+import driveVideo from './project_video.mp4'; // Import video file
 
 function Video() {
   const videoRef = useRef(null);

@@ -2,6 +2,7 @@ import React from 'react';
 import ImageUploadForm from './ImageUploadForm';
 import ComponentWeb from './ComponentWeb';
 import MaskedVideo from './MaskedVideo'; // Import the MaskedVideo component
+import MainSection from './MainSection';
 
 function App() {
   return (
@@ -9,12 +10,12 @@ function App() {
       <div className="App">
         {/* <h1>Waste Classification App</h1> */}
         <ComponentWeb/>
+        {/* <MainSection/> */}
         {/* <ImageUploadForm /> */}
       </div>
-      <div>
+      {/* <div>
         <MaskedVideo />
-        <h1>Mehvish</h1>
-      </div>
+      </div> */}
     </div>
   );
 }
