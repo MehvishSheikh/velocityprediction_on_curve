@@ -11,4 +11,26 @@
     outline: none; /* Remove outline on focus */
     cursor: pointer; /* Change cursor to pointer */
   }
+  .video-container {
+    margin-bottom: 20px;
+  }
+  
+  .video-player {
+    width: 100%;
+  }
+  
+  .speed-selector {
+    margin-top: 10px;
+  }
+  
+  .speed-selector label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .speed-selector select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
   
