@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ImageUploadForm from './ImageUploadForm';
 import Video from './Video';
+import MaskedVideo from './MaskedVideo';
 // import { Bar } from 'react-chartjs-2';
 const ComponentWeb = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -33,7 +34,7 @@ const ComponentWeb = () => {
       setResult(resultData.result);
       setMaxProbability(resultData.max_probability.toFixed(4));
       setIndividualProbabilities(resultData.individual_probabilities);
-      
+
 
       if (resultData.max_probability < 0.90) {
         setError('Please provide a clear image.');
@@ -63,7 +64,7 @@ const ComponentWeb = () => {
   //     },
   //   ],
   // };
-  
+
   // const options = {
   //   scales: {
   //     x: {
@@ -75,9 +76,9 @@ const ComponentWeb = () => {
   //     },
   //   },
   // };
-  
-  
-  
+
+
+
 
 
   return (
@@ -127,11 +128,11 @@ const ComponentWeb = () => {
                 <div className="d-flex justify-content-center justify-content-lg-start">
                   <div className="page">
                     <p></p>
-                    
+
                     <div>
                       <form onSubmit={handleSubmit}>
                         <label htmlFor="photo" className="custom-button">
-                          Upload Photo
+                          Upload Video
                           <input
                             type="file"
                             accept="image/png, image/jpeg, image/gif"
@@ -143,37 +144,27 @@ const ComponentWeb = () => {
                         <br />
                         <br />
                         {/* <input type="file" accept="image/*" onChange={handleImageChange} /> */}
-                        <button type="submit" className='classify-button'>Classify Waste</button>
+                        <button type="submit" className='classify-button'>Play</button>
 
-                       
+
                       </form>
 
 
-            
-<div className='result-box'>
-{result && maxProbability && (
-        <div>
-          <p>Result: {result}</p>
-          <p>Probability: {maxProbability*100}%</p>
-        </div>
-      )}
+
+                      
+                    </div>
 
 
-      {error && <p>Error: {error}</p>}
-    </div>
-    </div>
 
-    
 
-    
 
-              
+
                   </div>
                   {/* <a href="https://youtu.be/mQ93IcGCag4" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> */}
                 </div>
               </div>
 
-              
+
               <div
                 className="col-lg-6 order-1 order-lg-2 hero-img"
                 data-aos="zoom-in"
@@ -192,22 +183,13 @@ const ComponentWeb = () => {
           <section id="skills" className="skills">
             <div className="container" data-aos="fade-up">
               <div className="row">
-              <Video/>
+
                 <div
                   className="col-lg-6 d-flex align-items-center"
                   data-aos="fade-right"
                   data-aos-delay={100}
                 >
-                  {selectedImage && (
-                    <div className="image-preview">
-                      <h2>Uploaded Image:</h2>
-                      <img
-                        src={URL.createObjectURL(selectedImage)}
-                        alt="Uploaded Preview"
-                        className="uploaded-image"
-                      />
-                    </div>
-                  )}
+                  <Video/>
                 </div>
 
                 <div
@@ -216,45 +198,19 @@ const ComponentWeb = () => {
                   data-aos-delay={100}
                 >
 
+                  <MaskedVideo />
 
 
 
-<h3>Clasfication and Percentage of waste</h3>
-{/* {individualProbabilities.length > 0 && (
-        <div>
-         
-          {individualProbabilities.map(([className, probability]) => (
-            <p key={className}>{`${className}: ${probability.toFixed(2)}%`}</p>
-          ))}
-        </div>
-      )} */}
 
-<div className="skills-content">
-  {Array.isArray(individualProbabilities) && individualProbabilities.map(([className, probability]) => (
-    <div className="progress" key={className}>
-      <span className="skill">
-        {className} <i className="val">{probability.toFixed(2)}%</i>
-      </span>
-      <div className="progress-bar-wrap">
-        <div
-          className="progress-bar"
-          role="progressbar"
-          style={{ width: `${probability}%` }}
-          aria-valuenow={probability}
-          aria-valuemin={0}
-          aria-valuemax={100}
-        />
-      </div>
-    </div>
-  ))}
-</div>
+  
 
 
 
 
 
 
-                
+
                 </div>
               </div>
             </div>
@@ -265,17 +221,15 @@ const ComponentWeb = () => {
           <br />
           <br />
           <br />
-         
+
           <section id="about" className="about">
             <div className="container" data-aos="fade-up">
-            
+
               <div className="row">
-              {/* <div className="container d-flex align-items-center">
-            <h3>How to Decompose the Waste</h3>
-            </div> */}
-            <div className="section-title">
-                <h2>How to Decompose the Waste</h2>
-              </div>
+              
+                <div className="section-title">
+                  <h2>How to Decompose the Waste</h2>
+                </div>
                 <div className="col-md-3 d-flex align-items-center">
                   <a href="https://ecolifegreen.in/what-is-dry-waste-and-why-is-recycling-important/">
                     <img
@@ -365,7 +319,7 @@ const ComponentWeb = () => {
               </div>
             </div>
           </section>
-          
+
           <section id="faq" className="faq section-bg">
             <div className="container" data-aos="fade-up">
               <div className="section-title">
@@ -381,7 +335,7 @@ const ComponentWeb = () => {
                       className="collapse"
                       data-bs-target="#faq-list-1"
                     >
-                     
+
                       What is waste management?{" "}
                       <i className="bx bx-chevron-down icon-show" />
                       <i className="bx bx-chevron-up icon-close" />
