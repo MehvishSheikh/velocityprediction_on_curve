@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ImageUploadForm from './ImageUploadForm';
 import Video from './Video';
 import MaskedVideo from './MaskedVideo';
+import Signvideo from './Signvideo';
+
 // import { Bar } from 'react-chartjs-2';
 const ComponentWeb = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -233,7 +235,7 @@ const ComponentWeb = () => {
             </div>
           </section>
 
-
+          <Signvideo/>
           <br />
           <br />
           <br />
