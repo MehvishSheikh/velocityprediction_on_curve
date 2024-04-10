@@ -91,7 +91,7 @@ const ComponentWeb = () => {
               <a href="index.html">Curve Velocity Prediction</a>
             </h1>
             <nav id="navbar" className="navbar">
-              <ul>
+              {/* <ul>
                 <li>
                   <a className="nav-link scrollto active" href="#hero">
                     <span className="fa fa-home"> Home </span>
@@ -110,7 +110,7 @@ const ComponentWeb = () => {
                     <span className="fa fa-question-circle"> FAQ</span>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
               <i className="bi bi-list mobile-nav-toggle" />
             </nav>
           </div>
@@ -130,6 +130,18 @@ const ComponentWeb = () => {
                     <p></p>
 
                     <div>
+                    {/* <div
+                className="col-lg-6 order-1 order-lg-2 hero-img"
+                data-aos="zoom-in"
+                data-aos-delay={200}
+              >
+                <img
+                  src="assets/img/road44.jpeg"
+                  className="img-fluid animated"
+                  alt=""
+                />
+              </div> */}
+
                       <form onSubmit={handleSubmit}>
                         <label htmlFor="photo" className="custom-button">
                           Upload Video
@@ -163,7 +175,9 @@ const ComponentWeb = () => {
                   {/* <a href="https://youtu.be/mQ93IcGCag4" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> */}
                 </div>
               </div>
-
+            <div>
+              
+            </div>
 
               <div
                 className="col-lg-6 order-1 order-lg-2 hero-img"
@@ -171,11 +185,14 @@ const ComponentWeb = () => {
                 data-aos-delay={200}
               >
                 <img
-                  src="assets/img/recycling.jpeg"
+                  src="assets/img/road.jpeg"
                   className="img-fluid animated"
                   alt=""
                 />
+                
               </div>
+
+              
             </div>
           </div>
         </section>
@@ -222,7 +239,7 @@ const ComponentWeb = () => {
           <br />
           <br />
 
-          <section id="about" className="about">
+          {/* <section id="about" className="about">
             <div className="container" data-aos="fade-up">
 
               <div className="row">
@@ -526,7 +543,7 @@ const ComponentWeb = () => {
                 </ul>
               </div>
             </div>
-          </section>
+          </section> */}
         </main>
       </>
 

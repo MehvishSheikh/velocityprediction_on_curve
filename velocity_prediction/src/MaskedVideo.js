@@ -32,7 +32,7 @@ function MaskedVideo() {
   
     return (
       <div className="video-container">
-        <h1>Original Video</h1>
+        <h1>Masked Video</h1>
         <video
           ref={videoRef}
           className="video-player"
